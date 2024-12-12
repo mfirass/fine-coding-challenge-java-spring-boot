@@ -1,10 +1,9 @@
 package so.fine.codingchallenge.controller.lead;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import so.fine.codingchallenge.domain.lead.LeadRequest;
 import so.fine.codingchallenge.domain.lead.LeadResponse;
 import so.fine.codingchallenge.service.lead.LeadService;
 
@@ -32,6 +31,15 @@ public class LeadController {
         return leadService.getLeadById(Long.valueOf(id)).
                 map(ResponseEntity::ok).
                 orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping
+    public ResponseEntity<LeadResponse> createLead(@RequestBody LeadRequest leadRequest) {
+        LeadResponse leadResponse = leadService.createLead(leadRequest);
+        if (leadResponse == null) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(leadResponse);
     }
 
 }
