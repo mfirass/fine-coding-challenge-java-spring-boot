@@ -1,4 +1,4 @@
-package so.fine.codingchallenge.domain.lead.user;
+package so.fine.codingchallenge.domain.user;
 
 import lombok.Data;
 import so.fine.codingchallenge.db.entity.user.User;

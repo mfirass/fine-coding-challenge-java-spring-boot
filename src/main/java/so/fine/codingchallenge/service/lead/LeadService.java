@@ -8,7 +8,7 @@ import so.fine.codingchallenge.db.entity.user.User;
 import so.fine.codingchallenge.db.repository.user.UserRepository;
 import so.fine.codingchallenge.domain.lead.LeadRequest;
 import so.fine.codingchallenge.domain.lead.LeadResponse;
-import so.fine.codingchallenge.domain.lead.user.UserResponse;
+import so.fine.codingchallenge.domain.user.UserResponse;
 import so.fine.codingchallenge.db.repository.lead.LeadRepository;
 
 import java.util.List;

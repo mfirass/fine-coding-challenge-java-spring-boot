@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import so.fine.codingchallenge.domain.lead.LeadRequest;
 import so.fine.codingchallenge.domain.lead.LeadResponse;
-import so.fine.codingchallenge.domain.lead.user.UserResponse;
+import so.fine.codingchallenge.domain.user.UserResponse;
 import so.fine.codingchallenge.service.lead.LeadService;
 
 import java.util.List;
