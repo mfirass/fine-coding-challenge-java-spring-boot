@@ -1,4 +1,4 @@
-package so.fine.codingchallenge.repository.lead;
+package so.fine.codingchallenge.db.repository.lead;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

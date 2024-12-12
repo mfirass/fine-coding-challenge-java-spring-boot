@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import so.fine.codingchallenge.domain.lead.LeadRequest;
 import so.fine.codingchallenge.domain.lead.LeadResponse;
+import so.fine.codingchallenge.domain.lead.user.UserResponse;
 import so.fine.codingchallenge.service.lead.LeadService;
 
 import java.util.List;
@@ -42,4 +43,9 @@ public class LeadController {
         return ResponseEntity.status(HttpStatus.CREATED).body(leadResponse);
     }
 
+    @PostMapping("/{id}/convert")
+    public ResponseEntity<UserResponse> convertLeadToUser(@PathVariable("id") Long id) {
+        UserResponse userResponse = leadService.convertLeadToUser(id);
+        return ResponseEntity.ok(userResponse);
+    }
 }

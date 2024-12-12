@@ -1,12 +1,18 @@
 package so.fine.codingchallenge.db.entity.user;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import so.fine.codingchallenge.db.entity.lead.Lead;
 
 import java.util.List;
 
 @Entity
 @Table(name = "`user`")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
