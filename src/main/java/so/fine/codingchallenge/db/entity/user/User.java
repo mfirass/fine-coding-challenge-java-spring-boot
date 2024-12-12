@@ -6,6 +6,7 @@ import so.fine.codingchallenge.db.entity.lead.Lead;
 import java.util.List;
 
 @Entity
+@Table(name = "`user`")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

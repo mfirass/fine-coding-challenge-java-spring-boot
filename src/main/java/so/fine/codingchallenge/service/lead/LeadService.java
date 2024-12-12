@@ -1,11 +1,13 @@
 package so.fine.codingchallenge.service.lead;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import so.fine.codingchallenge.db.entity.lead.Lead;
 import so.fine.codingchallenge.domain.lead.LeadResponse;
 import so.fine.codingchallenge.repository.lead.LeadRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LeadService {
@@ -19,5 +21,9 @@ public class LeadService {
         return leadRepository.findAll().stream().
                 map(LeadResponse::toLeadResponse).
                 toList();
+    }
+
+    public Optional<LeadResponse> getLeadById(Long id) {
+        return leadRepository.findById(id).map(LeadResponse::toLeadResponse);
     }
 }
