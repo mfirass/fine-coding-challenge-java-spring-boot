@@ -1,10 +1,12 @@
 package so.fine.codingchallenge.db.entity.deal;
 
 import jakarta.persistence.*;
-import so.fine.codingchallenge.db.entity.lead.Lead;
+import lombok.Data;
+import so.fine.codingchallenge.db.entity.user.User;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) // Ensures separate tables for subclasses
+@Data
 public abstract class AbstractDeal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,5 +19,6 @@ public abstract class AbstractDeal {
     private DealStatus status; // Enum for status
 
     @ManyToOne
-    private Lead lead; // Associated Lead
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user; // Associated Lead
 }

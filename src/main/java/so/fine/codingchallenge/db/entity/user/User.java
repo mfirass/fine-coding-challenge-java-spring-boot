@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import so.fine.codingchallenge.db.entity.deal.AbstractDeal;
 import so.fine.codingchallenge.db.entity.lead.Lead;
 
 import java.util.List;
@@ -29,4 +30,7 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Lead> leads; // Leads managed by this User
+
+    @OneToMany(mappedBy = "user")
+    private List<AbstractDeal> deals; // Deals managed by this User
 }

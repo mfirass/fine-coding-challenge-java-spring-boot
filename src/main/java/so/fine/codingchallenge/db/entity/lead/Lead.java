@@ -24,6 +24,5 @@ public class Lead{
         String phoneNumber;
         String email;
         @ManyToOne User user;
-        @OneToMany(mappedBy = "lead") List<AbstractDeal> deals;
 }
 
